@@ -1,20 +1,17 @@
 ﻿using System;
-
+using MyUtilities;
+// using WeatherUtilities = MyUtilities.WeatherUtilities
 namespace firstProgram
 {
-    class Program
+    class CheckComfort
     {
         static void Main(string[] args)
         {
-            float result = FahrenheitToCelsius(76);
-            Console.WriteLine("Hello World! {0}", result);
-
+            Console.WriteLine("where should we go next?");
+            WeatherUtilities.Report("San Francisco", WeatherUtilities.FahrenheitToCelsius(65), 73);
+            WeatherUtilities.Report("Denver",WeatherUtilities.FahrenheitToCelsius(77), 55);
+            WeatherUtilities.Report("Bologna", 23, 65);
         }
 
-        static float FahrenheitToCelsius(float temperatureFahrenheit)
-        {
-            float temperatureCelsius = (temperatureFahrenheit - 32) / 1.8f;
-            return temperatureCelsius;
-        }
     }
 }
