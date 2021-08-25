@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace WiredBrainCoffeeSurveys.Reports
 {
@@ -6,6 +7,7 @@ namespace WiredBrainCoffeeSurveys.Reports
     {
         static void Main(string[] args)
         {
+            var tasks = new List<String>();
             double responseRate = Q1Results.NumberResponded / Q1Results.NumberSurveyed;
             double unansweredCount = Q1Results.NumberSurveyed - Q1Results.NumberResponded;
 
@@ -23,6 +25,29 @@ namespace WiredBrainCoffeeSurveys.Reports
             Console.WriteLine($"customes Would Recommend Us: {customerRecommend}");
             Console.WriteLine($"Hate Grano, Love Capuccino: {noGranolaYesCappucino}");
 
+            if(Q1Results.CoffeeScore < Q1Results.FoodScore)
+            {
+                tasks.Add("Investigate coffe recipes and ingredients.");
+            }
+
+            if (overallScore > 8.0)
+            {
+                tasks.Add("Work with leadearship to reward staff");
+            } else
+            {
+                tasks.Add("Work with employees for improvement ideas.");
+            }
+
+            if(responseRate < .33)
+            {
+                tasks.Add("Research...");
+            } else if (responseRate > .33 && responseRate < .66)
+            {
+                tasks.Add("Reward participants with free coffee coupon.");
+            } else
+            {
+                tasks.Add("Reward participation with discount coffee coupon");
+            }
         }
     }
 }
