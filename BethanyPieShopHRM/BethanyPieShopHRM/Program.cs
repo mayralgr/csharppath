@@ -10,8 +10,8 @@ namespace BethanyPieShopHRM
             int months = 12, bonus = 1000;
             bool isActive = true;
             double rating = 99.25;
-
-            // byte numberOfEmployees = 300;
+            double ratePerHour = 12.34;
+            int numberOfHoursWorked = 165;
             // montlyWage = true;
 
             /**
@@ -21,6 +21,22 @@ namespace BethanyPieShopHRM
              *   logical
              *   asigned
              */
+
+            // monthly wage of an employee
+            double currentMonthWage = ratePerHour * numberOfHoursWorked + bonus;
+            Console.WriteLine(currentMonthWage);
+
+            //
+            ratePerHour += 3;
+
+            if (currentMonthWage > 2000)
+            {
+                Console.WriteLine("Top paid employee");
+            }
+
+            int numberOfEmployees = 15;
+
+            numberOfEmployees--;
 
             Console.ReadLine();
 
