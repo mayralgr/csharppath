@@ -38,6 +38,18 @@ namespace BethanyPieShopHRM
 
             numberOfEmployees--;
 
+            // Members
+            int intMaxValue = int.MaxValue;
+            int intMinValue = int.MinValue;
+
+            char userSelection = 'a';
+
+            char upperUserSelection = char.ToUpper(userSelection);
+            bool isDigit = char.IsDigit(userSelection);
+            bool isLetter = char.IsLetter(userSelection);
+
+
+
             Console.ReadLine();
 
         }
