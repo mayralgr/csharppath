@@ -64,6 +64,14 @@ namespace BethanyPieShopHRM
 
             Console.WriteLine(startHour.ToLongDateString());
             Console.WriteLine(endHour.ToLongDateString());
+
+            long verLongMonth = numberOfHoursWorked;
+            double d = 123456789;
+            int x = (int)d;
+            int intVeryLong = (int)verLongMonth;
+
+            var something = 1234;
+            var rating = something;
             Console.ReadLine();
 
         }
