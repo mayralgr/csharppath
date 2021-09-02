@@ -107,6 +107,20 @@ namespace BethanyPieShopHRM
 
             string namingInterpolation = $"{fistName} {lastName}";
 
+            // escaping characters
+            // \n new line
+            // \t add a tab
+            // \\ escape slash
+
+            string displayName = $"Welcome \n{fistName}\t{lastName}";
+
+            Console.WriteLine(displayName);
+
+            string invalidFilePath = "C:\\data\\employeelist.xlsx";
+
+            string stringWithQuote = "Baking the \"best pies\" ever";
+
+            string verbaitin = @"C:\data\employeelist.xlsx";
             Console.ReadLine();
 
         }
