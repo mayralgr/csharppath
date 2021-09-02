@@ -87,7 +87,25 @@ namespace BethanyPieShopHRM
 
             var userName = "Bethany";
 
+            // concatenate strings
+            // +
+            // string.concat
+            // string.Format
+            // interpolation with $""
 
+            string fullNameConcat = fistName + "" + lastName;
+            string stringConcatFullName = string.Concat(fistName, lastName);
+            string empId = fistName.ToLower() + ":" + lastName.Trim().ToLower();
+            int longOfString = empId.Length;
+            if (fullname.Contains("Beth"))
+            {
+                Console.WriteLine("it is");
+            }
+            string substring = fullname.Substring(1, 3);
+
+            Console.WriteLine("Characters 2 to 4 of fullname are " + substring);
+
+            string namingInterpolation = $"{fistName} {lastName}";
 
             Console.ReadLine();
 
