@@ -71,7 +71,24 @@ namespace BethanyPieShopHRM
             int intVeryLong = (int)verLongMonth;
 
             var something = 1234;
-            var rating = something;
+            var rate = something;
+
+            // strings are reference but a primitive type
+            string fistName = "Bethany";
+            string lastName = "Smith";
+
+            System.String fullname = "Bethany Smith";
+
+            string noValueString = null;
+            // same as
+            string s;
+
+            s = fistName;
+
+            var userName = "Bethany";
+
+
+
             Console.ReadLine();
 
         }
