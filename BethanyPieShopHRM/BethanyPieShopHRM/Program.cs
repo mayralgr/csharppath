@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Text;
 
 namespace BethanyPieShopHRM
 {
@@ -121,7 +122,56 @@ namespace BethanyPieShopHRM
             string stringWithQuote = "Baking the \"best pies\" ever";
 
             string verbaitin = @"C:\data\employeelist.xlsx";
-            Console.ReadLine();
+
+            // equality tests
+            string name1 = "Bethany";
+            string name2 = "BETHANY";
+            Console.WriteLine("Are both name equal? " + (name1 == name2));
+            Console.WriteLine("Are both name equal? " + (name2.Equals("BETHANY")));
+            Console.WriteLine("Are both name equal? " + (name1.ToLower() == "bethany"));
+
+            // inmutability of strings
+            // String builder
+            string name = "Bethany";
+            string anotherName = name;
+
+            name += " Smith";
+
+            Console.WriteLine("NAME" + name);
+            Console.WriteLine("Another " + anotherName);
+
+            string lowerCase = name.ToLower();
+
+            StringBuilder stringBuilder = new StringBuilder();
+
+            stringBuilder.Append("Las name ");
+            stringBuilder.Append(lastName);
+            stringBuilder.Append("First name: ");
+            stringBuilder.Append(fistName);
+
+            string result = stringBuilder.ToString();
+            Console.WriteLine(result);
+
+            Console.WriteLine("Enter wage");
+            string wage = Console.ReadLine();
+            //int wageValue = int.Parse(wage);
+            int wageValue;
+            if (int.TryParse(wage, out wageValue)) {
+                Console.WriteLine("Parse success " + wageValue);
+            } else
+            {
+                Console.WriteLine("Parsing failed");
+            }
+            // same with datetime
+            string hireDateString = "12/12/2020";
+            DateTime hireDate = DateTime.Parse(hireDateString);
+            Console.WriteLine("Parsed date: " + hireDate);
+            //TryParse also exists for dates
+
+            var cultureInfo = new CultureInfo("nl-BE");
+            string birthDateString = "28 Maart 1984";//Dutch, spoken in Belgium
+            var birthDate = DateTime.Parse(birthDateString, cultureInfo);
+            Console.WriteLine("Birth date: " + birthDate);
 
         }
     }
