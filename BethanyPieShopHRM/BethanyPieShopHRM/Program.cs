@@ -38,9 +38,17 @@ namespace BethanyPieShopHRM
              * Module of types
              * */
             // List<string> list = new List<string>();
-            UsingEnumerations();
-
+            // UsingEnumerations();
+            UsingAStruct();
             Console.ReadLine();
+        }
+
+        private static void UsingAStruct()
+        {
+            Employee employee1;
+            employee1.Name = "Bethany";
+            employee1.Wage = 1250;
+            employee1.Work();
         }
 
         private static void UsingEnumerations()
@@ -432,5 +440,16 @@ namespace BethanyPieShopHRM
         Seating = 20,
         FullPieRestaurant = 100,
         Undefined = 99
+    }
+
+    struct Employee
+    {
+        public string Name;
+        public int Wage;
+
+        public void Work()
+        {
+            Console.WriteLine($"{Name} is now doing work!");
+        }
     }
 }
