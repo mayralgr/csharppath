@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Globalization;
 using System.Text;
 
 namespace BethanyPieShopHRM
@@ -6,6 +7,16 @@ namespace BethanyPieShopHRM
     class Program
     {
         static void Main(string[] args)
+        {
+            // TypesAndStrings();
+            int montlyWage = 1234;
+            int months = 12;
+            int yearlyWage = CalculateYearlyWage(montlyWage, months);
+            Console.WriteLine($"Yearly wage: {yearlyWage}");
+            Console.ReadLine();
+        }
+
+        private static void TypesAndStrings()
         {
             int montlyWage = 1234;
             int months = 12, bonus = 1000;
@@ -49,7 +60,7 @@ namespace BethanyPieShopHRM
             bool isDigit = char.IsDigit(userSelection);
             bool isLetter = char.IsLetter(userSelection);
 
-            DateTime hiredDate = new DateTime(2021, 3, 28, 14,30,0);
+            DateTime hiredDate = new DateTime(2021, 3, 28, 14, 30, 0);
 
             Console.WriteLine(hiredDate);
 
@@ -156,9 +167,11 @@ namespace BethanyPieShopHRM
             string wage = Console.ReadLine();
             //int wageValue = int.Parse(wage);
             int wageValue;
-            if (int.TryParse(wage, out wageValue)) {
+            if (int.TryParse(wage, out wageValue))
+            {
                 Console.WriteLine("Parse success " + wageValue);
-            } else
+            }
+            else
             {
                 Console.WriteLine("Parsing failed");
             }
@@ -172,7 +185,17 @@ namespace BethanyPieShopHRM
             string birthDateString = "28 Maart 1984";//Dutch, spoken in Belgium
             var birthDate = DateTime.Parse(birthDateString, cultureInfo);
             Console.WriteLine("Birth date: " + birthDate);
+        }
 
+
+        public static int CalculateYearlyWage(int monthlyWage, int numberOfMonthsWorked)
+        {
+            // Console.WriteLine($"Yearly wage: {monthlyWage * numberOfMonthsWorked}");
+            if (numberOfMonthsWorked == 12)
+            {
+                return monthlyWage * (numberOfMonthsWorked + 1);
+            }
+            return monthlyWage * numberOfMonthsWorked;
         }
     }
 }
