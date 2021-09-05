@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Globalization;
 using System.Text;
 
@@ -31,8 +32,43 @@ namespace BethanyPieShopHRM
             // UsingParams();
             // UsingOptionalParameters();
             // UsingNamedArguments();
-            UsingExpressionBodiedSyntax();
+            // UsingExpressionBodiedSyntax();
+
+            /***
+             * Module of types
+             * */
+            // List<string> list = new List<string>();
+            UsingEnumerations();
+
             Console.ReadLine();
+        }
+
+        private static void UsingEnumerations()
+        {
+            EmployeeType employeeType = EmployeeType.Manager;
+            StoreType storeType = StoreType.Seating;
+
+            int baseWage = 1000;
+            CalculateWage(baseWage, employeeType, storeType);
+        }
+
+        private static void CalculateWage(int baseWage, EmployeeType employeeType, StoreType storeType)
+        {
+            int calculatedWage = 0;
+            if (employeeType == EmployeeType.Manager)
+            {
+                calculatedWage = baseWage * 3;
+            } else
+            {
+                calculatedWage *= 2;
+            }
+
+            if (storeType == StoreType.FullPieRestaurant)
+            {
+                calculatedWage += 500;
+            }
+
+            Console.WriteLine($"The calculted wage is {calculatedWage}");
         }
 
         private static void TypesAndStrings()
@@ -380,5 +416,21 @@ namespace BethanyPieShopHRM
 
         public static int CalculateYearlyWageExpressionBodied(int monthlyWage, int numberOfMonthsWorked, int bonus) => monthlyWage * numberOfMonthsWorked + bonus;
 
+    }
+
+    enum EmployeeType
+    {
+        Sales, // 0
+        Manager, // 1
+        Research, // 2
+        StoreManager // 3
+    }
+
+    enum StoreType
+    {
+        PieCorner = 10,
+        Seating = 20,
+        FullPieRestaurant = 100,
+        Undefined = 99
     }
 }
