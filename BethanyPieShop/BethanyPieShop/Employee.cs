@@ -12,6 +12,7 @@ namespace BethanyPieShop
         private double hourlyRate;
         private DateTime birthDay;
         private EmployeeType employeeType;
+        private double rate;
 
         public string FirstName { get => firstName; set => firstName = value; }
         public string LastName { get => lastName; set => lastName = value; }
@@ -45,10 +46,23 @@ namespace BethanyPieShop
         public Employee(string first, string last, string em, DateTime bd, EmployeeType empType): this(first,last, em,bd,empType,0)
         { }
 
-            public void PerformWork()
+        public Employee(string first, string last, double rate)
+        {
+            FirstName = first;
+            LastName = last;
+            HourlyRate = rate;
+        }
+
+        public void PerformWork()
         {
             NumberOfHoursWorked++;
             Console.WriteLine($"{FirstName} {LastName} is now working");
+        }
+
+        public int PerformWork(int hours)
+        {
+            NumberOfHoursWorked += hours;
+            return NumberOfHoursWorked;
         }
 
         public void StopWorking()
@@ -65,6 +79,18 @@ namespace BethanyPieShop
 
             return Wage;
 
+        }
+
+        public double ReceiveWage(out int hoursWorked)
+        {
+            Wage = NumberOfHoursWorked * HourlyRate;
+
+            Console.WriteLine($"The wage for {NumberOfHoursWorked} hours of work is {Wage}.");
+
+            NumberOfHoursWorked = 0;
+            hoursWorked = NumberOfHoursWorked;
+
+            return Wage;
         }
 
         public void DisplayEmployeeDetails() => Console.WriteLine($"\nFirst name: {FirstName}\nLast name: {LastName}\nEmail: {Email}\nBirthday: {BirthDay.ToShortDateString()}\nEmployee type: {EmployeeType}\n");
