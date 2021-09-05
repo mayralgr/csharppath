@@ -9,10 +9,19 @@ namespace BethanyPieShopHRM
         static void Main(string[] args)
         {
             // TypesAndStrings();
+            // int
             int montlyWage = 1234;
             int months = 12;
-            int yearlyWage = CalculateYearlyWage(montlyWage, months);
-            Console.WriteLine($"Yearly wage: {yearlyWage}");
+            int bonus = 1000;
+            // int yearlyWage = CalculateYearlyWage(montlyWage, months, bonus);
+
+            // Console.WriteLine($"Yearly wage: {yearlyWage}");
+            double montlyWageDouble = 1500.0;
+            double monthsDouble = 12;
+            double bonusDouble = 1000;
+            double yearlyWageWithBonusDouble = CalculateYearlyWage(montlyWageDouble, monthsDouble, bonusDouble);
+
+
             Console.ReadLine();
         }
 
@@ -196,6 +205,16 @@ namespace BethanyPieShopHRM
                 return monthlyWage * (numberOfMonthsWorked + 1);
             }
             return monthlyWage * numberOfMonthsWorked;
+        }
+
+        public static int CalculateYearlyWage(int monthlyWage, int numberOfMonthsWorked, int bonus)
+        {
+            return monthlyWage * numberOfMonthsWorked + bonus;
+        }
+
+        public static double CalculateYearlyWage(double monthlyWage, double numberOfMonthsWorked, double bonus)
+        {
+            return monthlyWage * numberOfMonthsWorked + bonus;
         }
     }
 }
