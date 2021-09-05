@@ -39,12 +39,13 @@ namespace BethanyPieShopHRM
              * */
             // List<string> list = new List<string>();
             // UsingEnumerations();
-            UsingAStruct();
+            // UsingAStruct();
             Console.ReadLine();
         }
 
         private static void UsingAStruct()
         {
+            // Strucs are value types
             Employee employee1;
             employee1.Name = "Bethany";
             employee1.Wage = 1250;
