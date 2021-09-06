@@ -4,7 +4,7 @@ namespace BethanysPieShopHRM9.HR
 {
     public class Manager : Employee
     {
-        public Manager(string first, string last, string em, DateTime bd, double? rate) : base(first, last, em, bd, rate)
+        public Manager(int id, string first, string last, string em, DateTime bd, double? rate) : base(id, first, last, em, bd, rate)
         {
         }
 
@@ -22,7 +22,7 @@ namespace BethanysPieShopHRM9.HR
                 Console.WriteLine($"Manager {FirstName} {LastName} received a management bonus of 250!");
         }
 
-        public override double ReceiveWage()
+        /*public override double ReceiveWage()
         {
             double wageBeforeTax = NumberOfHoursWorked * 2 * HourlyRate.Value;
             double taxAmount = wageBeforeTax * taxRate;
@@ -33,6 +33,6 @@ namespace BethanysPieShopHRM9.HR
             NumberOfHoursWorked = 0;
 
             return Wage;
-        }
+        }*/
     }
 }

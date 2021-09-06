@@ -2,9 +2,10 @@
 
 namespace BethanysPieShopHRM9.HR
 {
-    //public class Employee
-    public abstract class Employee
+    public class Employee: IComparable, IEmployee
+    //public abstract class Employee
     {
+        private int id;
         private string firstName;
         private string lastName;
         private string email;
@@ -16,7 +17,14 @@ namespace BethanysPieShopHRM9.HR
 
         private DateTime birthDay;
         //private EmployeeType employeeType;
-
+        public int Id
+        {
+            get { return id; }
+            set
+            {
+                id = value;
+            }
+        } 
         public string FirstName
         {
             get { return firstName; }
@@ -74,8 +82,9 @@ namespace BethanysPieShopHRM9.HR
             }
         }
 
-        public Employee(string first, string last, string em, DateTime bd, double? rate)
+        public Employee(int id, string first, string last, string em, DateTime bd, double? rate)
         {
+            Id = id;
             FirstName = first;
             LastName = last;
             Email = em;
@@ -96,20 +105,20 @@ namespace BethanysPieShopHRM9.HR
             Console.WriteLine($"{FirstName} {LastName} has stopped working!");
         }
 
-        public abstract double ReceiveWage();
+        //public abstract double ReceiveWage();
 
-        //public double ReceiveWage()
-        //{
-        //    double wageBeforeTax = NumberOfHoursWorked * HourlyRate.Value;
-        //    double taxAmount = wageBeforeTax * taxRate;
+        public double ReceiveWage()
+        {
+            double wageBeforeTax = NumberOfHoursWorked * HourlyRate.Value;
+            double taxAmount = wageBeforeTax * taxRate;
 
-        //    Wage = wageBeforeTax - taxAmount;
+            Wage = wageBeforeTax - taxAmount;
 
-        //    Console.WriteLine($"The wage for {NumberOfHoursWorked} hours of work is {Wage}.");
-        //    NumberOfHoursWorked = 0;
+            Console.WriteLine($"The wage for {NumberOfHoursWorked} hours of work is {Wage}.");
+            NumberOfHoursWorked = 0;
 
-        //    return Wage;
-        //}
+            return Wage;
+        }
 
         public virtual void GiveBonus()
         {
@@ -124,6 +133,22 @@ namespace BethanysPieShopHRM9.HR
         public static void DisplayTaxRate()
         {
             Console.WriteLine($"The current tax rate is {taxRate}");
+        }
+
+        public void GiveCompliment()
+        {
+            Console.WriteLine($"You've done a great job {FirstName}");
+        }
+
+        public int CompareTo(object obj)
+        {
+            var otherEmployee = (Employee)obj;
+            if (Id > otherEmployee.Id)
+                return 1;
+            else if (Id < otherEmployee.Id)
+                return -1;
+            else
+                return 0;
         }
     }
 }
