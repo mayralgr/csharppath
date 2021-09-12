@@ -12,22 +12,19 @@ namespace PeopleViewer.Controllers
         public IActionResult UseService()
         {
             ViewData["Title"] = "Using a Web Service";
-            IPersonReader reader = new ServiceReader();
-            return PopulatePeopleView(reader);
+            return PopulatePeopleView(new ServiceReader());
         }
 
         public IActionResult UseCSV()
         {
             ViewData["Title"] = "Using a CSV File";
-            IPersonReader reader = new CSVReader();
-            return PopulatePeopleView(reader);
+            return PopulatePeopleView(new CSVReader());
         }
 
         public IActionResult UseSQL()
         {
             ViewData["Title"] = "Using a SQL Database";
-            IPersonReader reader = new SQLReader();
-            return PopulatePeopleView(reader);
+            return PopulatePeopleView(new SQLReader());
         }
 
         private IActionResult PopulatePeopleView(IPersonReader reader)
