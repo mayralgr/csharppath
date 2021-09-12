@@ -10,6 +10,12 @@
     <ProjectReference Include="..\PersonReader.Service\PersonReader.Service.csproj">
       <GlobalPropertiesToRemove></GlobalPropertiesToRemove>
     </ProjectReference>
+    <ProjectReference Include="..\PersonReader.CSV\PersonReader.CSV.csproj">
+      <GlobalPropertiesToRemove></GlobalPropertiesToRemove>
+    </ProjectReference>
+    <ProjectReference Include="..\PersonReader.SQL\PersonReader.SQL.csproj">
+      <GlobalPropertiesToRemove></GlobalPropertiesToRemove>
+    </ProjectReference>
   </ItemGroup>
 
   <Target Name="CopyDataFiles" AfterTargets="Build">
