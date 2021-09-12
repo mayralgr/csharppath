@@ -1,9 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using PersonReader.CSV;
 using PersonReader.Factory;
 using PersonReader.Interface;
-using PersonReader.Service;
-using PersonReader.SQL;
 using System.Collections.Generic;
 
 namespace PeopleViewer.Controllers
