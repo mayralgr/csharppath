@@ -19,6 +19,9 @@
     <ProjectReference Include="..\PersonReader.Factory\PersonReader.Factory.csproj">
       <GlobalPropertiesToRemove></GlobalPropertiesToRemove>
     </ProjectReference>
+    <ProjectReference Include="..\PersonReader.Interface\PersonReader.Interface.csproj">
+      <GlobalPropertiesToRemove></GlobalPropertiesToRemove>
+    </ProjectReference>
   </ItemGroup>
 
   <Target Name="CopyDataFiles" AfterTargets="Build">
