@@ -1,0 +1,24 @@
+﻿using System;
+
+namespace OddNumbers
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine ("Odd Numbers:");
+
+            var generator = new OddGenerator();
+            // add code here
+            foreach(int odd in generator)
+            {
+                if (odd > 50)
+                {
+                    break;
+                }
+                Console.WriteLine(odd);
+            }
+            Console.Read();
+        }
+    }
+}
