@@ -17,7 +17,7 @@ namespace PeopleViewer.Controllers
             }
             catch (Exception ex)
             {
-                // TODO: Log the exception
+                logger.LogException(ex);
                 return View("Error", new ErrorViewModel());
             }
         }
