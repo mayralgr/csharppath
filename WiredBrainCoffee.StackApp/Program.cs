@@ -23,7 +23,7 @@ namespace WiredBrainCoffee.StackApp
 
             while (stack.Count > 0)
             {
-                double item = stack.Pop();
+                double item = (double)stack.Pop();
                 Console.WriteLine($"Item: {item}");
                 sum += item;
             }
@@ -35,6 +35,12 @@ namespace WiredBrainCoffee.StackApp
             var stack = new SimpleStack();
             stack.Push("Wired brain coffee");
             stack.Push("Pluralsight");
+
+            while (stack.Count > 0)
+            {
+                string item = (string)stack.Pop();
+                Console.WriteLine($"Item: {item}");
+            }
         }
     }
 }
