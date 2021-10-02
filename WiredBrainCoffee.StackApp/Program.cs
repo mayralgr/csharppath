@@ -14,11 +14,11 @@ namespace WiredBrainCoffee.StackApp
         
         private static void StackDoubles()
         {
-            var stack = new SimpleStackDouble();
+            var stack = new SimpleStack<double>();
             stack.Push(1.2);
             stack.Push(2.8);
             stack.Push(3.0);
-
+            // stack.Push("hi");
             double sum = 0.0;
 
             while (stack.Count > 0)
@@ -32,7 +32,7 @@ namespace WiredBrainCoffee.StackApp
 
         private static void StackString()
         {
-            var stack = new SimpleStackString();
+            var stack = new SimpleStack<String>();
             stack.Push("Wired brain coffee");
             stack.Push("Pluralsight");
 
